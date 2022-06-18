@@ -36,11 +36,11 @@ const deleteProduct = asyncHandler(async (req, res) => {
 
 const createProduct = asyncHandler(async (req, res) => {
     const product = new Product({
-        title: 'pokemon Card',
-        image: 'Sample Image',
-        imageArray: ['Sample Image', 5, true],
-        price: '$400',
-        description: 'Rare Charizard Card',
+        title: req.body.title,
+        image: req.body.title.image,
+        imageArray: req.body.imageArray,
+        price: req.body.price,
+        description: req.body.description,
     })
     const createdProduct = await product.save()
     res.status(201).json(createdProduct)
