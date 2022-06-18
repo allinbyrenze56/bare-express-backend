@@ -5,6 +5,7 @@ const path = require('path');
 const { notFound, errorHandler } =  require('./middleware/errorMiddleware');
 const userRoutes = require('./routes/userRoutes')
 const blogRoutes = require('./routes/blogRoutes')
+const productRoutes = require('./routes/productRoutes')
 
 
 const connectDB = require('./config/db');
@@ -20,6 +21,7 @@ app.use(express.json({extended: false}));
 //define routes
  app.use('/api/user', userRoutes)
  app.use('/api/blog', blogRoutes)
+ app.use('/api/product', productRoutes)
 
 //middleware
 app.use(notFound);

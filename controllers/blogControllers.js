@@ -36,7 +36,7 @@ const deleteBlog = asyncHandler(async (req, res) => {
 
 const createBlog = asyncHandler(async (req, res) => {
     const blog = new Blog({
-        title: 'Sample title',
+        title: 'res.title',
         image: 'Sample Image',
         content: 'Sample Content',
         description: 'Sample Description',
